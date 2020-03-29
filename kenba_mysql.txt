@@ -1,0 +1,54 @@
+drop RECIPE_INGREDIENT;
+DROP TABLE INGREDIENT;
+drop table RECIPE;
+
+--材料--
+create table ingredient(
+id int(10) not null AUTO_INCREMENT,
+name varchar(10) not null,
+unit varchar(5) not null,
+primary key(id)
+);
+
+INSERT INTO ingredient (name, unit) VALUES ('雞蛋','顆');
+INSERT INTO ingredient (name, unit) VALUES ('油','g');
+INSERT INTO ingredient (name, unit) VALUES ('麵粉','g');
+INSERT INTO ingredient (name, unit) VALUES ('糖','g');
+INSERT INTO ingredient (name, unit) VALUES ('抹茶粉','g');
+INSERT INTO ingredient (name, unit) VALUES ('奶油','g');
+INSERT INTO ingredient (name, unit) VALUES ('鮮奶油','g');
+
+--食譜--
+CREATE TABLE RECIPE(
+
+id int(7) NOT NULL AUTO_INCREMENT,
+name VARCHAR(20) NOT NULL,
+count int(7) NOT NULL,
+primary key(id)
+);
+
+
+INSERT INTO RECIPE (name, count) VALUES ('蘋果派','30');
+INSERT INTO RECIPE (name, count) VALUES ('戚風蛋糕','500');
+INSERT INTO RECIPE (name, count) VALUES ('黑森林蛋糕','1000');
+
+
+--食譜材料--
+CREATE TABLE RECIPE_INGREDIENT(
+
+IngredientId int(7) NOT NULL,
+RecipeId int(7) NOT NULL,
+RICount int(7) NOT NULL,
+RIPrice int(7) NOT NULL,
+
+
+FOREIGN KEY (IngredientId) REFERENCES INGREDIENT(id),
+FOREIGN KEY (RecipeId) REFERENCES RECIPE(id),
+PRIMARY KEY (IngredientId, RecipeId));
+
+INSERT INTO RECIPE_INGREDIENT VALUES('1','1','2','16');
+INSERT INTO RECIPE_INGREDIENT VALUES('3','1','200','50');
+INSERT INTO RECIPE_INGREDIENT VALUES('1','2','2','16');
+INSERT INTO RECIPE_INGREDIENT VALUES('2','2','50','100');
+INSERT INTO RECIPE_INGREDIENT VALUES('1','3','2','16');
+INSERT INTO RECIPE_INGREDIENT VALUES('7','3','100','30');
