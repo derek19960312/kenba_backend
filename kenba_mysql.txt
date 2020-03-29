@@ -1,22 +1,22 @@
-drop RECIPE_INGREDIENT;
+DROP RECIPE_INGREDIENT;
 DROP TABLE INGREDIENT;
-drop table RECIPE;
+DROP TABLE RECIPE;
 
 --材料--
-create table ingredient(
+CREATE TABLE INGREDIENT(
 id int(10) not null AUTO_INCREMENT,
 name varchar(10) not null,
 unit varchar(5) not null,
 primary key(id)
 );
 
-INSERT INTO ingredient (name, unit) VALUES ('雞蛋','顆');
-INSERT INTO ingredient (name, unit) VALUES ('油','g');
-INSERT INTO ingredient (name, unit) VALUES ('麵粉','g');
-INSERT INTO ingredient (name, unit) VALUES ('糖','g');
-INSERT INTO ingredient (name, unit) VALUES ('抹茶粉','g');
-INSERT INTO ingredient (name, unit) VALUES ('奶油','g');
-INSERT INTO ingredient (name, unit) VALUES ('鮮奶油','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('雞蛋','顆');
+INSERT INTO INGREDIENT (name, unit) VALUES ('油','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('麵粉','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('糖','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('抹茶粉','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('奶油','g');
+INSERT INTO INGREDIENT (name, unit) VALUES ('鮮奶油','g');
 
 --食譜--
 CREATE TABLE RECIPE(
