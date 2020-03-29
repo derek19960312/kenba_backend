@@ -1,4 +1,4 @@
-package com.kenba.application.model.ingredient;
+package com.kenba.application.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

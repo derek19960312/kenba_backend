@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.kenba.application.DAO.IngredientRepository;
-import com.kenba.application.model.ingredient.Ingredient;
+import com.kenba.application.model.Ingredient;
 
 @RestController
 @RequestMapping(value = "/ingredients")
